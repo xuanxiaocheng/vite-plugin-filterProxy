@@ -1,6 +1,6 @@
 {
     "name": "vite-plugin-filter-proxy",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "Vite filter proxy plugin",
     "main": "dist/index.js",
     "scripts": {

@@ -1,8 +1,6 @@
-# vite-plugin-mock-server
+# vite-plugin-filter-proxy
 
-Provide local mocks for [Vite](https://vitejs.dev).
-
-A mock server plugin for [Vite](https://vitejs.dev), developed based on TypeScript. And support using TypeScript and JavaScript to write Mock API. When the Mock API file is modified, it will be hot updated automatically.
+Provide local proxy for [Vite](https://vitejs.dev).
 
 ## Install
 
@@ -74,7 +72,7 @@ interface options {
 }
 ```
 
-## Mock file examples
+## filter proxy examples
 - all request proxy to port 3000
 ```ts
 export default defineConfig({
@@ -114,5 +112,5 @@ export default defineConfig({
 
 MIT
 
-[npm-url]: https://npmjs.com/package/vite-plugin-mock-server
+[npm-url]: https://npmjs.com/package/vite-plugin-filter-proxy
 [vite-url]: https://vitejs.dev
