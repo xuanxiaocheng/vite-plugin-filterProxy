@@ -1,7 +1,5 @@
 # vite-plugin-mock-server
 
-[![npm][npm-img]][npm-url]
-
 Provide local mocks for [Vite](https://vitejs.dev).
 
 A mock server plugin for [Vite](https://vitejs.dev), developed based on TypeScript. And support using TypeScript and JavaScript to write Mock API. When the Mock API file is modified, it will be hot updated automatically.
