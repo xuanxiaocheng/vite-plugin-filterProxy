@@ -7,7 +7,6 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "vite-plugin-filter-proxy": "file:../vite-plugin-filter-proxy-1.0.0.tgz",
         "vue": "^3.2.25"
     },
     "devDependencies": {

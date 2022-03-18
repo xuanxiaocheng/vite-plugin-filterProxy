@@ -1,20 +1,12 @@
-import { createProxyMiddleware } from "http-proxy-middleware";
-import type * as express from "express";
-export interface Request extends express.Request {}
+import { createProxyMiddleware, Filter, Options } from "http-proxy-middleware";
 
 
-interface configOptions {
-  target: string;
-  filter?: (pathname: string, req: Request) => boolean;
-  rewrite?:
-    | { [regexp: string]: string }
-    | ((path: string, req: Request) => string)
-    | ((path: string, req: Request) => Promise<string>);
-  changeOrigin?: boolean;
+interface configOptions extends Options{
+  filter?: Filter
 }
 
 interface options {
-  [regexp: string]: configOptions;
+  [url: string]: configOptions;
 }
 
 export default function serverProxy(options: options) {
@@ -27,11 +19,7 @@ export default function serverProxy(options: options) {
           item,
           createProxyMiddleware(
             optionSingleValue.filter || ((pathname, req) => true),
-            {
-              target: optionSingleValue.target,
-              changeOrigin: optionSingleValue.changeOrigin || true,
-              pathRewrite: optionSingleValue.rewrite || null,
-            }
+            optionSingleValue
           )
         );
       });

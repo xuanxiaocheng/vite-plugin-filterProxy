@@ -7,11 +7,7 @@ function serverProxy(options) {
         configureServer(server) {
             Object.keys(options).forEach((item) => {
                 let optionSingleValue = options[item];
-                server.middlewares.use(item, http_proxy_middleware_1.createProxyMiddleware(optionSingleValue.filter || ((pathname, req) => true), {
-                    target: optionSingleValue.target,
-                    changeOrigin: optionSingleValue.changeOrigin || true,
-                    pathRewrite: optionSingleValue.rewrite || null,
-                }));
+                server.middlewares.use(item, http_proxy_middleware_1.createProxyMiddleware(optionSingleValue.filter || ((pathname, req) => true), optionSingleValue));
             });
         },
     };
